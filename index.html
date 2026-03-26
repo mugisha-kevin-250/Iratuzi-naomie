@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRATUZI NAOMIE - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-text">IRATUZI</span>
+                <span class="logo-sub">NAOMIE</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-page">
+        <canvas id="three-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="greeting">Welcome to</p>
+                <h1 class="name">IRATUZI NAOMIE</h1>
+                <p class="title">Creative Developer & Designer</p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">View My Work</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="profile-circle">
+                    <div class="profile-inner">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <div class="quick-links-grid">
+                <a href="about.html" class="quick-link-card">
+                    <div class="quick-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>About Me</h3>
+                    <p>Learn more about my journey and experience</p>
+                </a>
+                <a href="skills.html" class="quick-link-card">
+                    <div class="quick-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Skills</h3>
+                    <p>Explore my technical expertise and abilities</p>
+                </a>
+                <a href="projects.html" class="quick-link-card">
+                    <div class="quick-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Projects</h3>
+                    <p>Browse through my creative work portfolio</p>
+                </a>
+                <a href="contact.html" class="quick-link-card">
+                    <div class="quick-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Contact</h3>
+                    <p>Get in touch for collaborations and opportunities</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 IRATUZI NAOMIE. All Rights Reserved.</p>
+            <p class="footer-love">Made with <i class="fas fa-heart"></i> and <i class="fas fa-butterfly"></i></p>
+        </div>
+    </footer>
+
+    <!-- Floating Butterflies -->
+    <div class="butterfly butterfly-1">🦋</div>
+    <div class="butterfly butterfly-2">🦋</div>
+    <div class="butterfly butterfly-3">🦋</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
