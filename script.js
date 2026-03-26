@@ -178,6 +178,51 @@ function createParticles() {
     return new THREE.Points(particlesGeometry, particlesMaterial);
 }
 
+// ===== Create Flower Particles =====
+function createFlowerParticles() {
+    const flowerGroup = new THREE.Group();
+    const flowerCount = 50;
+    
+    for (let i = 0; i < flowerCount; i++) {
+        // Create flower petals
+        const petalGeometry = new THREE.PlaneGeometry(0.1, 0.1);
+        const petalMaterial = new THREE.MeshPhongMaterial({
+            color: new THREE.Color().setHSL(Math.random(), 0.7, 0.6),
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 0.8
+        });
+        
+        const petals = [];
+        for (let j = 0; j < 5; j++) {
+            const petal = new THREE.Mesh(petalGeometry, petalMaterial);
+            petal.position.x = Math.cos(j * Math.PI * 2 / 5) * 0.05;
+            petal.position.y = Math.sin(j * Math.PI * 2 / 5) * 0.05;
+            petal.rotation.z = j * Math.PI * 2 / 5;
+            petals.push(petal);
+            flowerGroup.add(petal);
+        }
+        
+        // Center of flower
+        const centerGeometry = new THREE.CircleGeometry(0.02, 8);
+        const centerMaterial = new THREE.MeshPhongMaterial({ color: 0xffd700 });
+        const center = new THREE.Mesh(centerGeometry, centerMaterial);
+        flowerGroup.add(center);
+        
+        // Position the flower randomly
+        flowerGroup.position.x = (Math.random() - 0.5) * 15;
+        flowerGroup.position.y = (Math.random() - 0.5) * 10;
+        flowerGroup.position.z = (Math.random() - 0.5) * 5;
+        
+        flowerGroup.userData = {
+            speed: Math.random() * 0.01 + 0.005,
+            rotationSpeed: Math.random() * 0.02 - 0.01
+        };
+    }
+    
+    return flowerGroup;
+}
+
 // ===== Add Objects to Scene =====
 const womenFigures = [];
 const butterflies = [];
@@ -211,6 +256,10 @@ for (let i = 0; i < 15; i++) {
 // Add particles
 const particles = createParticles();
 scene.add(particles);
+
+// Add flower particles
+const flowerParticles = createFlowerParticles();
+scene.add(flowerParticles);
 
 // ===== Lighting =====
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -269,6 +318,14 @@ function animate() {
         positions[i + 1] += Math.sin(time + positions[i]) * 0.002;
     }
     particles.geometry.attributes.position.needsUpdate = true;
+    
+    // Animate flower particles
+    flowerParticles.children.forEach((flower, index) => {
+        if (flower.userData) {
+            flower.rotation.z += flower.userData.rotationSpeed;
+            flower.position.y += Math.sin(time * 2 + index) * 0.001;
+        }
+    });
     
     renderer.render(scene, camera);
 }

@@ -190,6 +190,14 @@ ul {
     text-shadow: 0 3px 10px rgba(0,0,0,0.17);
 }
 
+.hero-description {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
 .hero-buttons {
     display: flex;
     gap: 20px;
@@ -262,6 +270,13 @@ ul {
 .profile-inner i {
     font-size: 150px;
     color: var(--deep-pink);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 @keyframes float {
@@ -340,19 +355,14 @@ ul {
 
 .image-frame {
     width: 300px;
-    height: 400px;
+    height: 300px;
     background: var(--gradient-pink);
-    border-radius: 20px;
+    border-radius: 50%;
     padding: 5px;
     box-shadow: var(--shadow-pink);
-}
-
-.image-frame {
-    background: var(--soft-pink);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid var(--light-pink);
 }
 
 .image-frame i {
@@ -387,6 +397,105 @@ ul {
     font-size: 36px;
     font-weight: 700;
     color: var(--deep-pink);
+}
+
+/* ===== Services Section ===== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+}
+
+.service-card i {
+    font-size: 40px;
+    color: var(--deep-pink);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ===== Flower Decorations ===== */
+.flower {
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    z-index: 10;
+    animation: floatFlower 6s ease-in-out infinite;
+}
+
+.flower.flower-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.flower.flower-2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.flower.flower-3 {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.flower.flower-4 {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.flower.flower-5 {
+    top: 50%;
+    left: 5%;
+    animation-delay: 4s;
+}
+
+.flower.flower-6 {
+    top: 70%;
+    right: 5%;
+    animation-delay: 5s;
+}
+
+@keyframes floatFlower {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
 }
 
 .stat-label {
