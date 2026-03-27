@@ -1328,8 +1328,85 @@ body::before {
 }
 
 @media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    .nav-links {
+        position: static;
+        background: transparent;
+        flex-direction: row;
+        padding: 0;
+        gap: 0;
+        box-shadow: none;
+        transform: none !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .nav-links::-webkit-scrollbar-track {
+        background: var(--soft-pink);
+        border-radius: 10px;
+    }
+
+    .nav-links::-webkit-scrollbar-thumb {
+        background: var(--primary-pink);
+        border-radius: 10px;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        padding: 10px 15px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: var(--soft-pink);
+        margin-right: 10px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: var(--light-pink);
+        color: var(--text-dark);
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 20px;
+    }
+
     .hero-content {
         padding: 0 20px;
+        gap: 0;
+        position: relative;
+    }
+
+    .hero-text {
+        z-index: 3;
+        position: relative;
+    }
+
+    .hero-visual {
+        position: absolute;
+        width: 150px;
+        margin-top: -80px;
+        z-index: 5;
     }
 
     .name {
@@ -1337,12 +1414,17 @@ body::before {
     }
 
     .profile-circle {
-        width: 220px;
-        height: 220px;
+        width: 150px;
+        height: 150px;
     }
 
     .profile-inner i {
-        font-size: 90px;
+        font-size: 70px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        padding-top: 30px;
     }
 
     .skills-grid {
